@@ -32,12 +32,7 @@ public class LKWMaut {
 		envClasses.put("D", new Double[] { 18.8d, 19.4d });
 		envClasses.put("E", new Double[] { 19.8d, 20.4d });
 		envClasses.put("F", new Double[] { 20.8d, 21.4d });
-		double maut = 0;
-		if (axis <= 3) {
-			maut = distance * envClasses.get(envClass)[0];
-		} else {
-			maut = distance * envClasses.get(envClass)[1];			
-		}
+		double maut = distance * envClasses.get(envClass)[axis < 4 ? 0: 1];	
 		System.out.format("Schadstoffklasse: %s, %d Achsen, %d Kilometer, -> %.2f Eurocent", envClass, axis, distance, maut);
 	}
 
