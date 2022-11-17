@@ -37,7 +37,7 @@ public class Palindrome {
 	public static Map<String, String> getPalindromes(String s) {
 		Map<String, String> palindromes = new HashMap<String, String>();
 		Matcher m = Pattern
-				.compile("[\\pL]+", Pattern.UNICODE_CHARACTER_CLASS | Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE)
+				.compile("[\\pL]{3,}", Pattern.UNICODE_CHARACTER_CLASS | Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE)
 				.matcher(s);
 		while (m.find()) {
 			String w = m.group();
