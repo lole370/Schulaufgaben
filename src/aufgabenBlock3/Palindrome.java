@@ -40,7 +40,9 @@ public class Palindrome {
 				.matcher(s);
 		while (m.find()) {
 			String w = m.group();
-			palindromes.put(w, getIfPalindrome(w));
+			String p = getIfPalindrome(w);
+			if(p != null) 
+				palindromes.put(w, p);
 		}
 		return palindromes;
 	}
