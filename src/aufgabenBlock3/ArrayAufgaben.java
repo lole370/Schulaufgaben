@@ -1,6 +1,5 @@
 package aufgabenBlock3;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayAufgaben {
@@ -90,7 +89,6 @@ public class ArrayAufgaben {
 	}
 	
 	public static void aufgabeG(int[] werte) {
-		//TODO: Messungsnummer in ausgabe hinzufügen (werte in map speichern)
 		Scanner sc = new Scanner(System.in);
 		boolean run = true;
 		int input = -1;
@@ -101,6 +99,7 @@ public class ArrayAufgaben {
 				run = false;
 			}
 		}
+		sc.close();
 		werte = sortArray(werte);
 		if(input == 1) {
 			aufgabeA(werte);
