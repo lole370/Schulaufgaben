@@ -16,7 +16,8 @@ public class Palindrome {
 
 		System.out.println("Palindrome:");
 
-		printMapAsTable(getPalindromes(input));
+		if (!printMapAsTable(getPalindromes(input)))
+			System.out.println("Keine Palindrome gefunden!");
 	}
 
 	public static String getReversed(String s) {
@@ -41,15 +42,16 @@ public class Palindrome {
 		while (m.find()) {
 			String w = m.group();
 			String p = getIfPalindrome(w);
-			if(p != null) 
+			if (p != null)
 				palindromes.put(w, p);
 		}
 		return palindromes;
 	}
 
-	public static void printMapAsTable(Map<String, String> map) {
+	public static boolean printMapAsTable(Map<String, String> map) {
 		if (map.isEmpty())
-			return;
+			return false;
+
 		int maxLen = 0;
 		for (String w : map.keySet()) {
 			if (w.length() > maxLen) {
@@ -66,6 +68,7 @@ public class Palindrome {
 				System.out.format("╟%s╫%s╢%n", singleLine, singleLine);
 		}
 		System.out.format("╚%s╩%s╝%n", line, line);
+		return true;
 	}
 
 }
