@@ -70,5 +70,5 @@ public class Palindrome {
 		System.out.format("╚%s╩%s╝%n", line, line);
 		return true;
 	}
-
+	
 }
