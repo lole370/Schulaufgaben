@@ -24,6 +24,10 @@ public class ArrayPracticeAufgabe {
 //		System.out.println(array[maxA] + " " + array[maxB]);
 
 		// gut:
+		if(array.length < 2) {
+			System.out.println("Array zu klein");
+			return;
+		}
 		int maxA = array[0];
 		int maxB = Integer.MIN_VALUE;
 
